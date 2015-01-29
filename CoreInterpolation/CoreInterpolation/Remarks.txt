@@ -1,0 +1,15 @@
+//        println(CFRunLoopActivity.AllActivities.rawValue)
+
+let o = CFRunLoopObserverCreateWithHandler(kCFAllocatorDefault, CFRunLoopActivity.AllActivities.rawValue, 1, 0) {
+observer, activity in
+println(activity.rawValue)
+}
+CFRunLoopAddObserver(CFRunLoopGetCurrent(), o, kCFRunLoopCommonModes)
+
+//        static var Entry: CFRunLoopActivity { get }
+//        static var BeforeTimers: CFRunLoopActivity { get }
+//        static var BeforeSources: CFRunLoopActivity { get }
+//        static var BeforeWaiting: CFRunLoopActivity { get }
+//        static var AfterWaiting: CFRunLoopActivity { get }
+//        static var Exit: CFRunLoopActivity { get }
+//        static var AllActivities: CFRunLoopActivity { get }
